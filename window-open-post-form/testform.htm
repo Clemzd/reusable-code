@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<script>
+			window.onload = function() {
+				var button = document.getElementById('btnPostForm');
+
+				button.addEventListener('click', function() {
+					var form = document.createElement('form');
+					form.action = 'showresults.php';
+					form.method = 'POST';
+					form.target = 'newwin';
+
+					var formElement = document.createElement('input');
+					formElement.type = 'hidden';
+					formElement.name = 'nickname';
+					formElement.value = 'johaeaen';
+
+					form.appendChild(formElement);
+					document.body.appendChild(form);
+
+					window.open('','newwin');
+					form.submit();		
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btnPostForm">Post form!</button>
+	</body>
+</html>
